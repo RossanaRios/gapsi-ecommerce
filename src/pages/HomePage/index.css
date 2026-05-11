@@ -1,0 +1,18 @@
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+}
+
+.homepage-error {
+  margin: 8px 16px !important;
+  flex-shrink: 0;
+}
+
+.homepage-loader {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
