@@ -31,6 +31,21 @@
   width: 100%;
 }
 
+@media (max-width: 599px) {
+  .product-list-item {
+    height: 280px;
+    max-width: 290px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 899px) {
+  .product-list-item {
+    height: 280px;
+    max-width: 350px;
+    width: 100%;
+  }
+} 
 .product-list-loader {
   display: flex;
   justify-content: center;

@@ -2,7 +2,7 @@ import { useMemo, useCallback, useRef, useState, useEffect } from 'react';
 import { FixedSizeList } from 'react-window';
 import type { ListChildComponentProps } from 'react-window';
 import CircularProgress from '@mui/material/CircularProgress';
-import { useTheme, useMediaQuery } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import { ProductCard } from '../ProductCard';
 import type { Product } from '../../types/product.types';
 import './index.css';
@@ -18,10 +18,9 @@ interface ProductListProps {
 }
 
 export function ProductList({ products, isLoading, hasMore, onLoadMore, cartItemIds }: ProductListProps) {
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-  const isTablet = useMediaQuery(theme.breakpoints.up('sm'));
-  const columns = isDesktop ? 3 : isTablet ? 2 : 1;
+  const isWide   = useMediaQuery('(min-width: 950px)');
+  const isMobile = useMediaQuery('(max-width: 599px)');
+  const columns  = isWide ? 3 : isMobile ? 1 : 2;
 
   // Mide la altura real del contenedor para pasarla a react-window
   const containerRef = useRef<HTMLDivElement>(null);
